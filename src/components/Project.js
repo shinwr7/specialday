@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import styled, { css } from "styled-components";
-import Slider from "react-slick";
-import { SiGithub } from "react-icons/si";
-import { VscLinkExternal } from "react-icons/vsc";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import React, { useEffect, useState } from "react";
+import { Col, Container, Row } from "react-bootstrap";
 import { useMediaQuery } from "react-responsive";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+import styled, { css } from "styled-components";
 
 function ProjectPresenter({ projects, mode }) {
   const isPc = useMediaQuery({
@@ -151,50 +149,6 @@ const ProjectContents = styled.pre`
   margin-bottom: 2.5rem;
 `;
 
-const RoleContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 2.5rem;
-
-  &::before {
-    ${(props) =>
-      props.mode === "isPc"
-        ? css`
-            font-size: 20px;
-          `
-        : css`
-            font-size: 15px;
-          `}
-    content:'Role :';
-    margin-right: 0.5rem;
-    font-weight: bold;
-  }
-`;
-
-const ProjectRole = styled.p`
-  ${(props) =>
-    props.mode === "isPc"
-      ? css`
-          font-size: 20px;
-        `
-      : css`
-          font-size: 15px;
-        `}
-  background:#e9ecef;
-  border-radius: 0.5rem;
-  padding: 0 0.5rem 0 0.5rem;
-  white-space: nowrap;
-  display: inline-block;
-  margin-bottom: 0;
-
-  & + & {
-    margin-left: 1rem;
-  }
-
-  font-weight: bold;
-`;
-
 const TagContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -233,33 +187,6 @@ const ProjectTag = styled.p`
   display: inline-block;
   margin: 0.5rem;
   font-weight: bold;
-`;
-
-const P = styled.h1`
-  font-weight: bold;
-  color: #000080;
-  display: inline;
-  font-size: 45px;
-  text-decoration: underline;
-  text-decoration-color: #000080;
-`;
-
-const LinkBtnGroup = styled.div`
-  display: flex;
-  justify-content: flex-end;
-`;
-
-const LinkBtn = styled.button`
-  color: black;
-  background: white;
-  border: 0;
-  outline: 0;
-  cursor: pointer;
-  border-radius: 1rem;
-
-  &:active {
-    filter: brightness(80%);
-  }
 `;
 
 export default ProjectPresenter;
